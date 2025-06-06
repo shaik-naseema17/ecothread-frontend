@@ -19,7 +19,7 @@ const ResetPassword = () => {
         }
 
         try {
-            const response = await axios.post(`http://localhost:3000/auth/reset-password/${token}`, { password });
+            const response = await axios.post(`https://ecothread-backend.vercel.app/auth/reset-password/${token}`, { password });
 
             if (response.data.status) {
                 setSuccessMessage("Password reset successfully! Redirecting to login...");

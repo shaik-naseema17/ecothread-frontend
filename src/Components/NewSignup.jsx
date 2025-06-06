@@ -25,7 +25,7 @@ const NewSignUp = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:3000/auth/signup', {
+            const response = await axios.post('https://ecothread-backend.vercel.app/auth/signup', {
                 username,
                 email,
                 password,

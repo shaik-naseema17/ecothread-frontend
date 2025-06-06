@@ -17,7 +17,7 @@ const ItemDetails = () => {
   useEffect(() => {
     const fetchItemDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/items/${id}`);
+        const response = await axios.get(`https://ecothread-backend.vercel.app/api/items/${id}`);
         setItem(response.data);
       } catch (error) {
         console.error('Error fetching item details:', error);
@@ -35,7 +35,7 @@ const ItemDetails = () => {
     <>
       <Navbar />
       <div className="item-details-container">
-        <img src={`http://localhost:3000${item.imageUrl}`} alt={item.title} className="item-image-large" />
+        <img src={`https://ecothread-backend.vercel.app${item.imageUrl}`} alt={item.title} className="item-image-large" />
         <div className="item-details-content">
           <h2>{item.title}</h2>
           <p>Size: {item.size}</p>

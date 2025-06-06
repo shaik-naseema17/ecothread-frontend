@@ -56,7 +56,7 @@ const AddItem = () => {
         formData.append("image", image); // Ensure the key matches backend field name
     
         try {
-            const response = await axios.post("http://localhost:3000/api/items/create", formData, {
+            const response = await axios.post("https://ecothread-backend.vercel.app/api/items/create", formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
             alert("Item created successfully!");

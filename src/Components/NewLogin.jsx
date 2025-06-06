@@ -16,7 +16,7 @@ const NewLogin = () => {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:3000/auth/login', { email, password });
+            const response = await axios.post('https://ecothread-backend.vercel.app/auth/login', { email, password });
             if (response.data.status) {
                 navigate(response.data.role === 'admin' ? "/admin" : "/items");
             } else {
