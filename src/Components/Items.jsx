@@ -8,17 +8,20 @@ const Items = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        const response = await axios.get('https://ecothread-backend.vercel.app/api/items');
-        setItems(response.data);
-      } catch (error) {
-        console.error('Error fetching items:', error);
-      }
-    };
+  const fetchItems = async () => {
+    try {
+      const response = await axios.get('https://ecothread-backend.vercel.app/api/items', {
+        withCredentials: true, // ✅ Needed to send cookies
+      });
+      setItems(response.data);
+    } catch (error) {
+      console.error('Error fetching items:', error);
+    }
+  };
 
-    fetchItems();
-  }, []);
+  fetchItems();
+}, []);
+
 
   return (
     <>
